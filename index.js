@@ -21,4 +21,4 @@ btnHomeReset.addEventListener("click", () => scoreHome.textContent = `${homeScor
 btnGuestOne.addEventListener("click", () => scoreGuest.textContent = `${guestScore += 1}`);
 btnGuestTwo.addEventListener("click", () => scoreGuest.textContent = `${guestScore += 2}`);
 btnGuestFive.addEventListener("click", () => scoreGuest.textContent = `${guestScore += 5}`);
-btnGuestReset.addEventListener("click", () => scoreGuest.textContent = `${homeScore = 0}`);
+btnGuestReset.addEventListener("click", () => scoreGuest.textContent = `${guestScore = 0}`);
