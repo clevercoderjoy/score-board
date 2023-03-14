@@ -17,13 +17,12 @@ body {
 }
 #board{
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     text-align: center;
     padding: 10px;
-    max-width: 600px;
+    max-width: 500px;
     max-height: auto;
     margin: 10px auto;
     background: #1B244A;
@@ -69,5 +68,5 @@ body {
 }
 .reset{
     margin: 20px auto;
-    width: 400px;
+    width: 450px;
 }
