@@ -1,24 +1,46 @@
-const scoreHome = document.querySelector(".home-score");
-const scoreGuest = document.querySelector(".guest-score");
+const playerOne = document.querySelector(".playerOne-score");
+const playerTwo = document.querySelector(".playerTwo-score");
 
-const btnHomeOne = document.querySelector(".btn-home-one");
-const btnHomeTwo = document.querySelector(".btn-home-two");
-const btnHomeFive = document.querySelector(".btn-home-five");
-const btnHomeReset = document.querySelector(".btn-home-reset");
+const btnPlayerOneOne = document.querySelector(".btn-playerOne-one");
+const btnPlayerOneTwo = document.querySelector(".btn-playerOne-two");
+const btnPlayerOneFive = document.querySelector(".btn-playerOne-five");
 
-const btnGuestOne = document.querySelector(".btn-guest-one");
-const btnGuestTwo = document.querySelector(".btn-guest-two");
-const btnGuestFive = document.querySelector(".btn-guest-five");
-const btnGuestReset = document.querySelector(".btn-guest-reset");
+const btnPlayerTwoOne = document.querySelector(".btn-playerTwo-one");
+const btnPlayerTwoTwo = document.querySelector(".btn-playerTwo-two");
+const btnPlayerTwoFive = document.querySelector(".btn-playerTwo-five");
 
-let homeScore = 0;
-let guestScore = 0;
+const btnReset = document.querySelector(".reset");
 
-btnHomeOne.addEventListener("click", () => scoreHome.textContent = `${homeScore += 1}`);
-btnHomeTwo.addEventListener("click", () => scoreHome.textContent = `${homeScore += 2}`);
-btnHomeFive.addEventListener("click", () => scoreHome.textContent = `${homeScore += 5}`);
-btnHomeReset.addEventListener("click", () => scoreHome.textContent = `${homeScore = 0}`);
-btnGuestOne.addEventListener("click", () => scoreGuest.textContent = `${guestScore += 1}`);
-btnGuestTwo.addEventListener("click", () => scoreGuest.textContent = `${guestScore += 2}`);
-btnGuestFive.addEventListener("click", () => scoreGuest.textContent = `${guestScore += 5}`);
-btnGuestReset.addEventListener("click", () => scoreGuest.textContent = `${guestScore = 0}`);
+let playerOneScore = 0;
+let playerTwoScore = 0;
+
+const increment = (pointToIncrement, team) => {
+    if(team === 'playerOne'){
+        playerOneScore += pointToIncrement;
+    }
+    else{
+        playerTwoScore += pointToIncrement;
+    }
+    render();
+}
+
+const reset = () => {
+    playerOneScore = 0;
+    playerTwoScore = 0; 
+    render();
+}
+
+const render = () => {
+    playerOne.textContent = playerOneScore;
+    playerTwo.textContent = playerTwoScore;
+}
+
+btnPlayerOneOne.addEventListener("click", () => increment(1, "playerOne"));
+btnPlayerOneTwo.addEventListener("click", () => increment(2, "playerOne"));
+btnPlayerOneFive.addEventListener("click", () => increment(5, "playerOne"));
+
+btnReset.addEventListener("click", reset);
+
+btnPlayerTwoOne.addEventListener("click", () => increment(1, "playerTwo"));
+btnPlayerTwoTwo.addEventListener("click", () => increment(2, "playerTwo"));
+btnPlayerTwoFive.addEventListener("click", () => increment(5, "playerTwo"));
